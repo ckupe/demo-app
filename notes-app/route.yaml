@@ -5,7 +5,7 @@ metadata:
   name: notes-app
 spec:
   port:
-    targetPort: 80
+    targetPort: 3456
   to:
     kind: Service
     name: notes-app
