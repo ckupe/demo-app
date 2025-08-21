@@ -17,7 +17,7 @@ spec:
         app: notes-app
     spec:
       containers:
-      - image: docker.io/vikunja/vikunja:latest
+      - image: docker.io/vikunja/vikunja:0.24.2
         name: notes-app
         ports:
           - name: app
