@@ -1,0 +1,13 @@
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: notes-app
+spec:
+  port:
+    targetPort: 80
+  to:
+    kind: Service
+    name: notes-app
+    weight: 100
+  wildcardPolicy: None

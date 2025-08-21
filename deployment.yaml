@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: notes-app
+  name: notes-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notes-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: notes-app
+    spec:
+      containers:
+      - image: docker.io/vikunja/vikunja:latest
+        name: notes-app
+        resources: {}
+        ports:
+          - name: app
+            containerPort: 3456
+        volumeMounts:
+        - mountPath: /db
+          name: db
+        - mountPath: /app/vikunja/files
+          name: files
+      volumes:
+      - name: db
+        persistentVolumeClaim:
+          claimName: notes-app-db
+      - name: files
+        persistentVolumeClaim:
+          claimName: notes-app-files
+status: {}
