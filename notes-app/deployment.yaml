@@ -13,29 +13,27 @@ spec:
   strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: notes-app
     spec:
       containers:
       - image: docker.io/vikunja/vikunja:latest
         name: notes-app
-        resources: {}
         ports:
           - name: app
             containerPort: 3456
         volumeMounts:
-        - mountPath: /db
-          name: db
-        - mountPath: /app/vikunja/files
-          name: files
+          - mountPath: /db
+            name: db
+          - mountPath: /app/vikunja/files
+            name: files
         env:
-        - name: VIKUNJA_SERVICE_ENABLEREGISTRATION
-          value: true
-        - name: VIKUNJA_SERVICE_PUBLICURL
-          value: "http://notes-app-notes-app.apps-crc.testing"
-        - name: VIKUNJA_SERVICE_TIMEZONE
-          value: "America/Los_Angeles"
+          - name: VIKUNJA_SERVICE_ENABLEREGISTRATION
+            value: 'true'
+          - name: VIKUNJA_SERVICE_PUBLICURL
+            value: 'http://notes-app-notes-app.apps-crc.testing'
+          - name: VIKUNJA_SERVICE_TIMEZONE
+            value: 'America/Los_Angeles'
       volumes:
       - name: db
         persistentVolumeClaim:
