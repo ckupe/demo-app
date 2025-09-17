@@ -31,7 +31,7 @@ spec:
           - name: VIKUNJA_SERVICE_ENABLEREGISTRATION
             value: 'true'
           - name: VIKUNJA_SERVICE_PUBLICURL
-            value: 'http://notes-app-notes-app.apps-crc.testing'
+            value: 'http://notes-app-notes-app.apps.zfighters.svaldi.mcces.usmc.mil/'
           - name: VIKUNJA_SERVICE_TIMEZONE
             value: 'America/Los_Angeles'
       volumes:
